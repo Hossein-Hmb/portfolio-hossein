@@ -88,7 +88,7 @@ function Hero() {
       className="flex min-h-screen flex-col items-center justify-center text-center">
       <h1 className="mb-4 text-5xl font-bold md:text-6xl">Hey, I’m Hossein.</h1>
       <p className="max-w-md text-lg text-gray-500 dark:text-gray-400">
-        Software engineer • physics nerd • content creator.
+        Software Engineer • Physics Enthusiast • Content Creator
       </p>
     </motion.section>
   );
@@ -97,16 +97,24 @@ function Hero() {
 /* --- timeline dummy data (replace with real gigs later) --- */
 const EXPERIENCE = [
   {
-    date: "2024‑2025",
-    role: "Software Engineering Intern",
-    company: "Acme AI",
-    blurb: "Built realtime dashboards with Next.js & Stream.",
+    date: "january 2025 - April 2025",
+    role: "Research Assistant (Software Developer)",
+    company: "AI4Science @uOttawa",
+    blurb: "Developed a Streamlit app for visualizing qunatum states.",
   },
   {
-    date: "2023‑2024",
-    role: "Research Assistant",
-    company: "uOttawa Quantum Lab",
-    blurb: "Visualised quantum states with WebGL + Three.js.",
+    date: "January 2024 - August 2024",
+    role: "Application Specialist Intern",
+    company: "Institut du Savoir Montfort",
+    blurb:
+      "Built realtime dashboards. Developed internal tools with Microsoft PowerApps.",
+  },
+  {
+    date: "January 2022 - May 2022",
+    role: "IT Developer Intern",
+    company: "Canada Revenue Agency (CRA)",
+    blurb:
+      "Created COBOL programs. Enhanced legacy systems to optimize performance.",
   },
 ];
 
@@ -142,25 +150,25 @@ const PROJECTS = [
   {
     slug: "quanrum-visualizer",
     title: "Quantum State Visualizer",
-    cover: "/images/ai‑assistant.jpg",
+    cover: "/quantum_visualizer.png",
     tagline: "Interactive 3D visualisation of quantum states.",
   },
   {
     slug: "pixel‑art‑game",
     title: "2D Pixel Art Game",
-    cover: "/images/rostam.jpg",
+    cover: "/Rostam.png",
     tagline: "Retro-style platformer with pixel art graphics.",
   },
   {
     slug: "machine-learning",
     title: "Building an ML Model from Scratch",
-    cover: "/images/blog.jpg",
+    cover: "/neuralnetwork.png",
     tagline: "Learning ML concepts by building a model.",
   },
   {
     slug: "personal-portfolio",
     title: "Personal Portfolio Website",
-    cover: "/images/blog.jpg",
+    cover: "/portfolio_website.png",
     tagline: "Next.js + Tailwind.",
   },
   {
