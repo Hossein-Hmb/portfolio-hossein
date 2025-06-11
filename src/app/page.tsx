@@ -148,13 +148,13 @@ function WorkExperience() {
 /* --- projects dummy data (replace slugs + images later) --- */
 const PROJECTS = [
   {
-    slug: "quanrum-visualizer",
+    slug: "quantum-visualizer",
     title: "Quantum State Visualizer",
     cover: "/quantum_visualizer.png",
     tagline: "Interactive 3D visualisation of quantum states.",
   },
   {
-    slug: "pixel‑art‑game",
+    slug: "pixelartgame",
     title: "2D Pixel Art Game",
     cover: "/Rostam.png",
     tagline: "Retro-style platformer with pixel art graphics.",
@@ -174,7 +174,7 @@ const PROJECTS = [
   {
     slug: "flashcard-app",
     title: "Flashcard Learning App",
-    cover: "/images/blog.jpg",
+    // cover: "/images/blog.jpg",
     tagline: "Flutter app for spaced repetition learning.",
   },
 ];
@@ -192,11 +192,11 @@ function ProjectsSection() {
         {PROJECTS.map((p) => (
           <Link
             key={p.slug}
-            href={`/projects/${p.slug}`}
+            href={`/blog/${p.slug}`}
             className="group block overflow-hidden rounded-lg border border-gray-200 transition hover:-translate-y-1 dark:border-gray-700">
             <div className="relative h-44 w-full">
               <Image
-                src={p.cover}
+                src={p.cover ?? "/rostam.png"}
                 alt={p.title}
                 fill
                 className="object-cover transition group-hover:scale-105"
