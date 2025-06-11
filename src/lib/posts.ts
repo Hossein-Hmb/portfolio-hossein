@@ -10,7 +10,6 @@ export interface PostMeta {
   date: string;
   summary: string;
   cover?: string;
-  [key: string]: any; // extra front-matter
 }
 
 export async function getPostSlugs() {
