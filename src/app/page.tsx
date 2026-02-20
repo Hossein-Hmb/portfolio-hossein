@@ -18,8 +18,8 @@ function Hero() {
       animate={{ opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.2 } }}
       className="flex min-h-screen flex-col items-center justify-center text-center">
       <h1 className="mb-4 text-5xl font-bold md:text-6xl">Hey, I’m Hossein.</h1>
-      <p className="max-w-md text-lg text-gray-500 dark:text-gray-400">
-        Software Engineer • Physics Enthusiast • Content Creator
+      <p className="whitespace-nowrap text-lg text-gray-500 dark:text-gray-400">
+        Software Developer • Physics Enthusiast • Content Creator
       </p>
     </motion.section>
   );
@@ -27,6 +27,13 @@ function Hero() {
 
 /* --- timeline dummy data (replace with real gigs later) --- */
 const EXPERIENCE = [
+  {
+    date: "September 2025 - Present",
+    role: "Full Stack Developer",
+    company: "Self-Employed",
+    blurb:
+      "Developing a marketing automation platform with agentic capabilities.",
+  },
   {
     date: "january 2025 - April 2025",
     role: "Research Assistant (Software Developer)",
@@ -107,6 +114,13 @@ const PROJECTS = [
     title: "Flashcard Learning App",
     // cover: "/images/blog.jpg",
     tagline: "Flutter app for spaced repetition learning.",
+  },
+  {
+    slug: "ml-quantum-optimizer",
+    title: "ML-Powered Quantum Circuit Optimizer",
+    cover: "/quantum_visualizer.png",
+    tagline:
+      "Building a machine learning algorithm to optimize quantum circuits.",
   },
 ];
 
