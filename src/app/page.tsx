@@ -155,18 +155,18 @@ const GALLERY_PREVIEWS = [
     title: "Ottawa Italy Festival '26",
     href: "/gallery#ottawa-italy-festival-26",
     photos: [
-      { src: "/gallery/ottawa-italy-festival-26/DSCF3986.JPG", alt: "Ferrari at Ottawa Italy Festival" },
-      { src: "/gallery/ottawa-italy-festival-26/DSCF4050.JPG", alt: "Italy Festival performer and vintage truck" },
-      { src: "/gallery/ottawa-italy-festival-26/DSCF4415.JPG", alt: "Ferrari at Ottawa Italy Festival" },
+      { src: "/gallery/ottawa-italy-festival-26/DSCF3986.avif", alt: "Ferrari at Ottawa Italy Festival" },
+      { src: "/gallery/ottawa-italy-festival-26/DSCF4050.avif", alt: "Italy Festival performer and vintage truck" },
+      { src: "/gallery/ottawa-italy-festival-26/DSCF4415.avif", alt: "Ferrari at Ottawa Italy Festival" },
     ],
   },
   {
     title: "Japan '25",
     href: "/gallery#japan-25",
     photos: [
-      { src: "/gallery/DSCF0505.JPG", alt: "Japan travel photograph" },
-      { src: "/gallery/DSCF0553.JPG", alt: "Japan travel photograph" },
-      { src: "/gallery/DSCF0567.JPG", alt: "Japan travel photograph" },
+      { src: "/gallery/DSCF0505.avif", alt: "Japan travel photograph" },
+      { src: "/gallery/DSCF0553.avif", alt: "Japan travel photograph" },
+      { src: "/gallery/DSCF0567.avif", alt: "Japan travel photograph" },
     ],
   },
 ];

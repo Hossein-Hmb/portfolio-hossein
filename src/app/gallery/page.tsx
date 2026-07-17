@@ -3,7 +3,7 @@ import path from "path";
 import Navbar from "../Navbar";
 import GalleryGrid, { GalleryEvent, GalleryPhoto } from "./GalleryGrid";
 
-const IMAGE_EXTENSIONS = [".jpg", ".jpeg", ".png", ".gif", ".webp"];
+const IMAGE_EXTENSIONS = [".jpg", ".jpeg", ".png", ".gif", ".webp", ".avif"];
 
 const EVENT_DETAILS = [
   {
