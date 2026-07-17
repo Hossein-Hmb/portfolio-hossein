@@ -6,6 +6,7 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolink from "rehype-autolink-headings";
 import Link from "next/link";
 import { mdxComponents } from "@/components/MDXComponents";
+import Navbar from "../../Navbar";
 
 export async function generateStaticParams() {
   const slugs = await getPostSlugs();
@@ -22,17 +23,19 @@ export default async function BlogPost({
   if (!post) return notFound();
 
   return (
-    <article className="prose prose-lg lg:prose-xl dark:prose-invert mx-auto max-w-2xl px-4 py-24 prose-img:mx-auto">
+    <>
+      <Navbar />
+      <article className="prose prose-base sm:prose-lg lg:prose-xl dark:prose-invert mx-auto max-w-2xl px-4 py-24 sm:px-6 sm:py-32 prose-img:mx-auto">
       {post.meta.cover && (
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={post.meta.cover}
           alt={post.meta.title}
-          className="mb-8 w-full rounded-xl shadow"
+          className="mb-8 max-h-[55svh] w-full rounded-xl object-cover shadow sm:max-h-[65svh]"
         />
       )}
 
-      <h1 className="mb-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+      <h1 className="mb-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
         {post.meta.title}
       </h1>
       <p className="text-sm text-gray-500 mb-10">{post.meta.date}</p>
@@ -53,6 +56,7 @@ export default async function BlogPost({
           ← Back to all posts
         </Link>
       </footer>
-    </article>
+      </article>
+    </>
   );
 }

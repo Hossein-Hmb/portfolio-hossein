@@ -12,6 +12,7 @@ export default function BlogImage({ className = "", ...rest }: Props) {
   const merged = [
     "my-8",
     "rounded-xl",
+    "max-h-[70svh]",
     "shadow-lg",
     "object-cover",
     "w-full",

@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const navLinks = [
   { href: "/blog", label: "Blog" },
@@ -44,18 +45,23 @@ const social = [
 ];
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <motion.header
       initial={{ y: -30, opacity: 0 }}
       animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
-      className="fixed inset-x-0 top-0 z-10 backdrop-blur-sm">
-      <nav className="relative mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+      className="fixed inset-x-0 top-0 z-50 border-b border-gray-200/70 bg-white/80 backdrop-blur-md dark:border-gray-800/70 dark:bg-black/80">
+      <nav className="relative mx-auto flex max-w-5xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
         <Link
           href="/"
-          className="text-3xl font-thin tracking-tight hover:opacity-80">
+          onClick={closeMenu}
+          className="text-2xl font-thin tracking-tight hover:opacity-80 sm:text-3xl">
           Hossein
         </Link>
-        <ul className="absolute left-1/2 flex -translate-x-1/2 items-center gap-6">
+        <ul className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-6 md:flex">
           {navLinks.map(({ href, label }) => (
             <li key={label}>
               <Link
@@ -66,7 +72,7 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-        <ul className="ml-auto flex items-center gap-6">
+        <ul className="ml-auto hidden items-center gap-3 sm:flex sm:gap-4">
           {social.map(({ href, label, icon }) => (
             <li key={label} className="shrink-0">
               <a
@@ -80,6 +86,49 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+        <button
+          type="button"
+          onClick={() => setMenuOpen((open) => !open)}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
+          className="ml-auto inline-flex h-10 w-10 items-center justify-center rounded-lg border border-gray-200 text-gray-900 transition hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-900 md:hidden">
+          <span className="sr-only">{menuOpen ? "Close navigation" : "Open navigation"}</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-none stroke-current stroke-2">
+            {menuOpen ? <path d="m6 6 12 12M18 6 6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
+          </svg>
+        </button>
+        {menuOpen && (
+          <div
+            id="mobile-navigation"
+            className="absolute inset-x-0 top-full border-b border-gray-200 bg-white px-4 py-4 shadow-lg dark:border-gray-800 dark:bg-black md:hidden">
+            <ul className="grid gap-1">
+              {navLinks.map(({ href, label }) => (
+                <li key={label}>
+                  <Link
+                    href={href}
+                    onClick={closeMenu}
+                    className="block rounded-lg px-3 py-3 text-base font-medium transition hover:bg-gray-100 dark:hover:bg-gray-900">
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <ul className="mt-4 flex items-center gap-2 border-t border-gray-200 pt-3 dark:border-gray-800">
+              {social.map(({ href, label, icon }) => (
+                <li key={label}>
+                  <a
+                    href={href}
+                    aria-label={label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex h-10 w-10 items-center justify-center rounded-lg transition hover:bg-gray-100 dark:hover:bg-gray-900">
+                    {icon}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </nav>
     </motion.header>
   );

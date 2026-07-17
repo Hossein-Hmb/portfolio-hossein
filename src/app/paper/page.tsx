@@ -27,12 +27,11 @@ export default function PaperPage() {
   return (
     <div>
       <Navbar />
-      <main className="mx-auto max-w-3xl px-6 py-24">
-        <h1 className="mb-12 text-4xl font-bold">Paper</h1>
+      <main className="mx-auto max-w-3xl px-4 py-24 sm:px-6 sm:py-32">
+        <h1 className="mb-8 text-3xl font-bold sm:mb-12 sm:text-4xl">Paper</h1>
         {PAPERS.length === 0 ? (
           <p className="text-gray-500 dark:text-gray-400">
-            Papers and self-written articles will appear here. Add entries to the
-            PAPERS array in src/app/paper/page.tsx.
+            Papers and self-written articles will appear here soon.
           </p>
         ) : (
           <ul className="space-y-10">
